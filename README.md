@@ -53,17 +53,11 @@ Minimal version of the app is done:
    ```
    pip install flask
    ```
-4. Create the config file and set a secret key:
-   ```
-   cp config.example.py config.py
-   python -c "import secrets; print(secrets.token_hex(32))"
-   ```
-   Paste the generated key into `config.py` as `SECRET_KEY`.
-5. Start the app:
+4. Start the app:
    ```
    python app.py
    ```
-6. Open http://127.0.0.1:5000 in your browser.
+5. Open http://127.0.0.1:5000 in your browser.
 
 The SQLite database (`minecraft-seeds-db.sqlite`) is not in the repository. The tables are created automatically on first start.
 
