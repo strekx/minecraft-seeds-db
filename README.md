@@ -26,3 +26,51 @@ The application just aims to provide a clean and intuitive user interface withou
 - registered users can save seeds to their favorites and remove them from their favorites. 
 
 - registered users can give their saved favorites custom names and search their favorites using these names. 
+
+
+## Update 15.11. 
+Minimal version of the app is done:
+
+- Users can register, log in and log out.
+
+- Logged-in users can add, edit and delete their own seeds.
+
+- All users can browse the seeds that have been added.
+
+- Seeds can be searched by keyword (title, description, seed number) and filtered by launcher edition (Java / Bedrock) and game version.
+
+- Seed numbers and usernames accept any characters.
+
+## Instructions on running the app locally
+
+1. Clone the repository and open the folder.
+2. Create and activate a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate        # Windows: venv\Scripts\activate
+   ```
+3. Install Flask:
+   ```
+   pip install flask
+   ```
+4. Create the config file and set a secret key:
+   ```
+   cp config.example.py config.py
+   python -c "import secrets; print(secrets.token_hex(32))"
+   ```
+   Paste the generated key into `config.py` as `SECRET_KEY`.
+5. Start the app:
+   ```
+   python app.py
+   ```
+6. Open http://127.0.0.1:5000 in your browser.
+
+The SQLite database (`minecraft-seeds-db.sqlite`) is not in the repository. The tables are created automatically on first start.
+
+## Testing the app
+
+1. Click "Create new account" and register a user.
+2. Sign in, then click "Add seed" and fill in the form.
+3. Edit or delete your seed from the front page.
+4. Use the search box and the edition/version filters on the front page.
+5. Register a second user and check that they cannot edit or delete the first user's seeds.
